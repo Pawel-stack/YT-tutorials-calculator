@@ -102,22 +102,28 @@ body {
 
 .history-btn {
     border-radius: 20px;
-    padding: 5px 5px; 
+    padding: 7px 7px; 
     font-size: 15px;
     cursor: pointer;
     margin-top: 15px;
-    background-color: rgba(182, 182, 182);
+    background-color: rgba(80, 80, 80, 466);
+    color: white;
 }
 
 .history-btn:hover {
     background-color: white;
     border-color: white;
+    color: black;
 }
 
 .history {
     text-align: center;
     margin: 10px;
     text-decoration: none;
+}
+
+.hr-line {
+    margin: 10px 10px; 
 }
 
 
