@@ -30,7 +30,7 @@ body {
 .display {
     width: 100%;
     min-height: 20%;
-    background-color: rgba(29, 27, 27, 0.151);
+    background-image: linear-gradient(to right bottom, #5C5C3E, #191917 );
     color: white; 
     word-break: break-all;
     text-align: right;
@@ -72,8 +72,8 @@ body {
     transition: all .2s ease-in-out;
 }
 
-.button :hover {
-    background-color: bisque;
+.panel:hover {
+    color: bisque;
 }
 
 .equals {
@@ -87,10 +87,37 @@ body {
 .calculator-history {
     height: 60vh; 
     width: 150px; 
-    margin: 20px; 
+    margin: 5px; 
     color: white; 
-    background-color: rgb(246, 246, 242);
+    background-image: linear-gradient(to right bottom, #5C5C3E, #191917 );
+    border: none;
+}
+
+.history-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px; 
+}
+
+.history-btn {
+    border-radius: 20px;
+    padding: 5px 5px; 
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    background-color: rgba(182, 182, 182);
+}
+
+.history-btn:hover {
+    background-color: white;
+}
+
+.history {
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
 }
 
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+
