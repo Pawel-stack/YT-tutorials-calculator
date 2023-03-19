@@ -108,6 +108,7 @@ body {
     margin-top: 15px;
     background-color: rgba(80, 80, 80, 466);
     color: white;
+    display: none;
 }
 
 .history-btn:hover {
