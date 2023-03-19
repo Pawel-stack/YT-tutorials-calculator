@@ -30,26 +30,62 @@ function displayNumber(){
    if(this.textContent === '.' && currentNumber.innerHTML === '')
    return currentNumber.innerHTML = " " + this.textContent;
 
-    currentNumber.innerHTML += this.textContent;
+   currentNumber.innerHTML += this.textContent;
 
 }
 
 function operate(){
 
+    if(currentNumber.innerHTML === '' && this.textContent === '-'){
+        currentNumber.innerHTML = '-';
+        return;
+    } else if (currentNumber.innerHTML === ''){
+        return;
+    }
+
+    if(mathSign.innerHTML !== ''){
+        showResults();
+    }
+
+    previousNumber.innerHTML = currentNumber.innerHTML;
+    mathSign.innerHTML = this.textContent; 
+    currentNumber.innerHTML = '';
 
 }
 
 function showResults(){
 
-    let a = currentNumber.innerHTML; 
+    if(previousNumber.innerHTML === '' || currentNumber.innerHTML === '');
 
-    let b = previousNumber.innerHTML;
+    let a = Number(currentNumber.innerHTML); 
 
-    switch(operate){
+    let b = Number(previousNumber.innerHTML);
+
+    let operator = mathSign.innerHTML;
+
+    switch(operator){
         case '+' :
         result = a + b; 
         break;
+        case '-' :
+        result = b - a;
+        break; 
+        case '*' :
+        result = a * b;
+        break;
+        case ':' :
+        result = b / a; 
+        break;
+        case '2^' :
+        result = b ** a; 
+        break;
     }
+
+    addToHistoryPanel();
+
+    currentNumber.innerHTML = result; 
+    previousNumber.innerHTML = '';
+    mathSign.innerHTML = ''; 
 
 }
 
@@ -62,8 +98,28 @@ function clear(){
 
 }
 
-function clearHistory(){
+function addToHistoryPanel(){
 
+    historyItem = document.createElement('li');
+    historyItem.innerHTML = `${currentNumber.innerHTML} ${mathSign.innerHTML} ${previousNumber.innerHTML} = ${result}`
+    historyItem.classList.add('history');
+    calculatorHistory.appendChild(historyItem);
+    historyButton.classList.add('active');
+}
+
+function clearHistory(){
+    calculatorHistory.innerHTML = '';
+    if(calculatorHistory.textContent == ''){
+        historyButton.classList.remove('active');
+    }
+
+}
+
+function clearScreen(){
+    result = '';
+    currentNumber.innerHTML = '';
+    mathSign.innerHTML = '';
+    previousNumber.innerHTML = '';
 }
 
 
